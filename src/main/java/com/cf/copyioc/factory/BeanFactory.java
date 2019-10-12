@@ -8,7 +8,7 @@ import com.cf.copyioc.BeanDefinition;
  */
 public interface BeanFactory {
 
-    void registerBeanDefinition(String name, BeanDefinition beanDefinition);
+    void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception;
 
     Object getBean(String name);
 
