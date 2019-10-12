@@ -2,6 +2,7 @@ package com.cf.copyioc.xml;
 
 import com.cf.copyioc.AbstractBeanDefinitionReader;
 import com.cf.copyioc.BeanDefinition;
+import com.cf.copyioc.BeanReference;
 import com.cf.copyioc.PropertyValue;
 import com.cf.copyioc.io.ResourceLoader;
 import org.w3c.dom.Document;
@@ -70,7 +71,21 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
                 Element propertyEle = (Element) item;
                 String attrName = propertyEle.getAttribute("name");
                 String attrValue = propertyEle.getAttribute("value");
-                beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(attrName,attrValue));
+                //是value值则添加value属性
+                if(attrValue != null && attrValue.length() > 0){
+                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(attrName,attrValue));
+                }else{
+                    //ref属性
+                    String ref = propertyEle.getAttribute("ref");
+                    if(ref == null || ref.length() == 0){
+                        throw new IllegalArgumentException("Configuration problem: <property> element for property '"
+                                + attrName + "' must specify a ref or value");
+                    }
+
+                    //将属性引用加入beanDefinition的propertyValues中
+                    BeanReference beanReference = new BeanReference(ref);
+                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(attrName,beanReference));
+                }
             }
         }
     }

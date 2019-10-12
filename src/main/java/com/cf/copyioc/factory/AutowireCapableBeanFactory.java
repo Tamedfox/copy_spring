@@ -1,6 +1,7 @@
 package com.cf.copyioc.factory;
 
 import com.cf.copyioc.BeanDefinition;
+import com.cf.copyioc.BeanReference;
 import com.cf.copyioc.PropertyValue;
 
 import java.lang.reflect.Field;
@@ -11,6 +12,7 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
     protected Object doCreateBean(BeanDefinition beanDefinition) throws Exception {
         //初始化bean
         Object beanInstance = createBeanInstance(beanDefinition);
+        beanDefinition.setBean(beanInstance);
         applyPropertyValues(beanDefinition, beanInstance);
         return beanInstance;
     }
@@ -22,11 +24,17 @@ public class AutowireCapableBeanFactory extends AbstractBeanFactory {
      * @throws NoSuchFieldException
      * @throws IllegalAccessException
      */
-    private void applyPropertyValues(BeanDefinition beanDefinition, Object beanInstance) throws NoSuchFieldException, IllegalAccessException {
+    private void applyPropertyValues(BeanDefinition beanDefinition, Object beanInstance) throws Exception {
         for (PropertyValue propertyValue : beanDefinition.getPropertyValues().getPropertyValueList()) {
             Field declaredField = beanInstance.getClass().getDeclaredField(propertyValue.getName());
             declaredField.setAccessible(true);
-            declaredField.set(beanInstance,propertyValue.getValue());
+//            declaredField.set(beanInstance,propertyValue.getValue());
+            Object value = propertyValue.getValue();
+            if(value instanceof BeanReference){
+                BeanReference beanReference = (BeanReference) value;
+                value= getBean(beanReference.getName());
+            }
+            declaredField.set(beanInstance,value);
         }
     }
 
