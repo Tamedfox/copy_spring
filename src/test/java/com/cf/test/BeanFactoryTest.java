@@ -1,11 +1,11 @@
 package com.cf.test;
 
-import com.cf.copyioc.BeanDefinition;
-import com.cf.copyioc.factory.AbstractBeanFactory;
-import com.cf.copyioc.factory.AutowireCapableBeanFactory;
-import com.cf.copyioc.io.ResourceLoader;
-import com.cf.copyioc.service.HelloWorldService;
-import com.cf.copyioc.xml.XmlBeanDefinitionReader;
+import com.cf.copyioc.beans.BeanDefinition;
+import com.cf.copyioc.beans.factory.AbstractBeanFactory;
+import com.cf.copyioc.beans.factory.AutowireCapableBeanFactory;
+import com.cf.copyioc.beans.io.ResourceLoader;
+import com.cf.copyioc.beans.service.HelloWorldService;
+import com.cf.copyioc.beans.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 
 import java.util.Map;

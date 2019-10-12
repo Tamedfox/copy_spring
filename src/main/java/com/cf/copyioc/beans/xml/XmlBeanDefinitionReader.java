@@ -1,10 +1,10 @@
-package com.cf.copyioc.xml;
+package com.cf.copyioc.beans.xml;
 
-import com.cf.copyioc.AbstractBeanDefinitionReader;
-import com.cf.copyioc.BeanDefinition;
+import com.cf.copyioc.beans.AbstractBeanDefinitionReader;
+import com.cf.copyioc.beans.BeanDefinition;
 import com.cf.copyioc.BeanReference;
-import com.cf.copyioc.PropertyValue;
-import com.cf.copyioc.io.ResourceLoader;
+import com.cf.copyioc.beans.PropertyValue;
+import com.cf.copyioc.beans.io.ResourceLoader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

@@ -1,6 +1,6 @@
 package com.cf.test.io;
 
-import com.cf.copyioc.io.ResourceLoader;
+import com.cf.copyioc.beans.io.ResourceLoader;
 import org.junit.Assert;
 import org.junit.Test;
 

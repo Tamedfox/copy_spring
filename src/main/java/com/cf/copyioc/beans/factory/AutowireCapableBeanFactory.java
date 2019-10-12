@@ -1,8 +1,8 @@
-package com.cf.copyioc.factory;
+package com.cf.copyioc.beans.factory;
 
-import com.cf.copyioc.BeanDefinition;
+import com.cf.copyioc.beans.BeanDefinition;
 import com.cf.copyioc.BeanReference;
-import com.cf.copyioc.PropertyValue;
+import com.cf.copyioc.beans.PropertyValue;
 
 import java.lang.reflect.Field;
 

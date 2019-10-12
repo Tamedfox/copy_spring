@@ -1,4 +1,4 @@
-package com.cf.copyioc.io;
+package com.cf.copyioc.beans.io;
 
 import java.io.IOException;
 import java.io.InputStream;

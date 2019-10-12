@@ -1,4 +1,4 @@
-package com.cf.copyioc.service;
+package com.cf.copyioc.beans.service;
 
 
 public class OutputService {

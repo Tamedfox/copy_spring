@@ -1,4 +1,4 @@
-package com.cf.copyioc;
+package com.cf.copyioc.beans;
 
 import java.util.ArrayList;
 import java.util.List;

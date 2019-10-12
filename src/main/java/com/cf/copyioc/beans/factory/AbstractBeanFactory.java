@@ -1,6 +1,6 @@
-package com.cf.copyioc.factory;
+package com.cf.copyioc.beans.factory;
 
-import com.cf.copyioc.BeanDefinition;
+import com.cf.copyioc.beans.BeanDefinition;
 
 import java.util.*;
 
@@ -10,7 +10,6 @@ public abstract class AbstractBeanFactory implements BeanFactory {
 
     private final List<String> beanDefinitionNames = new ArrayList<>();
 
-    @Override
     public void registerBeanDefinition(String name, BeanDefinition beanDefinition) throws Exception {
 //        Object bean = doCreateBean(beanDefinition);
 //        beanDefinition.setBean(bean);

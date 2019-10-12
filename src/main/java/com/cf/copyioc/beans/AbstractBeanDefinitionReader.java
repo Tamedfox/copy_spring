@@ -1,6 +1,6 @@
-package com.cf.copyioc;
+package com.cf.copyioc.beans;
 
-import com.cf.copyioc.io.ResourceLoader;
+import com.cf.copyioc.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;

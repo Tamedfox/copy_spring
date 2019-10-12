@@ -1,8 +1,8 @@
 package com.cf.test.xml;
 
-import com.cf.copyioc.BeanDefinition;
-import com.cf.copyioc.io.ResourceLoader;
-import com.cf.copyioc.xml.XmlBeanDefinitionReader;
+import com.cf.copyioc.beans.BeanDefinition;
+import com.cf.copyioc.beans.io.ResourceLoader;
+import com.cf.copyioc.beans.xml.XmlBeanDefinitionReader;
 import org.junit.Assert;
 import org.junit.Test;
 

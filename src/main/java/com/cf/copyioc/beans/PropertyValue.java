@@ -1,4 +1,4 @@
-package com.cf.copyioc;
+package com.cf.copyioc.beans;
 
 public class PropertyValue {
 

@@ -1,4 +1,4 @@
-package com.cf.copyioc;
+package com.cf.copyioc.beans;
 
 /**
  * 从配置中读取BeanDefinitionReader

@@ -1,4 +1,4 @@
-package com.cf.copyioc;
+package com.cf.copyioc.beans;
 
 /**
  * 封装bean对象，保存bean的额外信息
