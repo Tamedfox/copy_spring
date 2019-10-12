@@ -1,4 +1,4 @@
-package com.cf.test;
+package com.cf.copyioc;
 
 public class HelloWorldService {
 
