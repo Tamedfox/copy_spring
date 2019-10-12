@@ -1,7 +1,8 @@
 package com.cf.test;
 
 import com.cf.copyioc.BeanDefinition;
-import com.cf.copyioc.BeanFactory;
+import com.cf.copyioc.factory.AutowireCapableBeanFactory;
+import com.cf.copyioc.factory.BeanFactory;
 import org.junit.Test;
 
 public class BeanFactoryTest {
@@ -9,16 +10,16 @@ public class BeanFactoryTest {
     @Test
     public void test(){
         //1.初始化工厂
-        BeanFactory beanFactory = new BeanFactory();
+        BeanFactory beanFactory = new AutowireCapableBeanFactory();
 
-        //2.BeanFactory注入bean
-        HelloWorldService helloWorldService = new HelloWorldService();
-        BeanDefinition beanDefinition = new BeanDefinition(helloWorldService);
-        beanFactory.registerBeanDefination("helloWorldService",beanDefinition);
+        //2.注册到工厂
+        BeanDefinition beanDefinition = new BeanDefinition();
+        beanDefinition.setBeanClassName("com.cf.test.HelloWorldService");
+        beanFactory.registerBeanDefinition("helloWorldService",beanDefinition);
 
         //3.获取bean
-        HelloWorldService target = (HelloWorldService) beanFactory.getBean("helloWorldService");
-        target.helloService();
+        HelloWorldService helloWorldService = (HelloWorldService) beanFactory.getBean("helloWorldService");
+        helloWorldService.helloService();
     }
 
 }
